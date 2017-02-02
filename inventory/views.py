@@ -6,7 +6,7 @@ from inventory.models import Item
 
 
 def index(request):
-    items = Item.objects.exclude(amount=0)
+    items = Item.objects.all()
     return render(request, 'inventory/index.html', {
         'items': items,
     })
