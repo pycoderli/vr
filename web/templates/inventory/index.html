@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h3>Items in stock</h3>
+  <h3>Houses in stock</h3>
   <ul>
-    {% for item in items %}
+    {% for house in houses %}
       <li>
-          <a href="{% url 'item_detail' item.id %}">
-            {{item.title | capfirst}}
+          <a href="{% url 'house_detail' house.id %}">
+            {{house.title | capfirst}}
           </a>
       </li>
     {% endfor %}

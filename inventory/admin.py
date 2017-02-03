@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import Item
+from .models import House
 
-class ItemAdmin(admin.ModelAdmin):
+class HouseAdmin(admin.ModelAdmin):
     list_display =["title"]
-admin.site.register(Item, ItemAdmin)
+admin.site.register(House, HouseAdmin)

@@ -2,37 +2,48 @@ from django.shortcuts import render
 from django.http import Http404
 from django.http import HttpResponse
 
-from inventory.models import Item
-from inventory.models import Rooms
+from inventory.models import *
 
 def index(request):
-    items = Item.objects.all()
+    houses = House.objects.all()
     return render(request, 'inventory/index.html', {
-        'items': items,
+        'houses': houses,
     })
 
-def item_detail(request, id):
+def house_detail(request, id):
     try:
-        item = Item.objects.get(id=id)
-    except Item.DoesNotExist:
+        house = House.objects.get(id=id)
+    except House.DoesNotExist:
         raise Http404('This item does not exist')
-    return render(request, 'inventory/item_detail.html', {
-        'item': item,
+    return render(request, 'inventory/house_detail.html', {
+        'house': house,
     })
-    return HttpResponse('<p> In item_detail view with id {0}</p>'.format(id))
+    return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
 
-def image_link(request, id):
+def room_pic(request, id):
     try:
-        roomss = Rooms.objects.filter(item_id=id)
+        roomss = Rooms.objects.filter(house_id=id)
     except Rooms.DoesNotExist:
         raise Http404('This item does not exist')
     return render(request, 'inventory/room_panorama.html', {
         'room': roomss[0]
     })
-    return HttpResponse('<p> In item_detail view with id {0}</p>'.format(id))
+    return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
+
+def arrow_pic(request, id):
+    try:
+        arrow = ConnectedArrow.objects.get(id=id)
+        rooms = Rooms.objects.filter(id=arrow.room_destination_id)
+    except ConnectedArrow.DoesNotExist:
+        raise Http404('This item does not exist')
+    return render(request, 'inventory/room_panorama.html', {
+        'room': rooms
+    })
+
+    return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
 
 
 # todo delete
 def panorama(request):
     return render(request, 'inventory/panorama.html')
-    return HttpResponse('<p> In item_detail view with id {0}</p>'.format(id))
+    return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
