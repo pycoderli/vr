@@ -55,7 +55,6 @@ def room_pic(request, id):
         'room': rooms[0],
         'next_destination_id' : next_destination_id
     })
-    return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
 
 def arrow_pic(request, id):
     try:
@@ -69,5 +68,3 @@ def arrow_pic(request, id):
         'room': rooms[0],
         'next_destination_id' : next_destination_id
     })
-
-    return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
