@@ -22,22 +22,28 @@ def house_detail(request, id):
 
 def room_pic(request, id):
     try:
-        roomss = Rooms.objects.filter(house_id=id)
-    except Rooms.DoesNotExist:
+        rooms = Room.objects.filter(house_id=id)
+        next_room = ConnectedArrow.objects.filter(room_id=id)
+        next_destination_id = next_room[0].room_destination_id
+    except Room.DoesNotExist:
         raise Http404('This item does not exist')
     return render(request, 'inventory/room_panorama.html', {
-        'room': roomss[0]
+        'room': rooms[0],
+        'next_destination_id' : next_destination_id
     })
     return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
 
 def arrow_pic(request, id):
     try:
         arrow = ConnectedArrow.objects.get(id=id)
-        rooms = Rooms.objects.filter(id=arrow.room_destination_id)
+        rooms = Room.objects.filter(id=arrow.room_destination_id)
+        next_room = ConnectedArrow.objects.filter(room_id=id)
+        next_destination_id = next_room[0].room_destination_id
     except ConnectedArrow.DoesNotExist:
         raise Http404('This item does not exist')
     return render(request, 'inventory/room_panorama.html', {
-        'room': rooms
+        'room': rooms[0],
+        'next_destination_id' : next_destination_id
     })
 
     return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))

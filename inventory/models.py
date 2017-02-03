@@ -7,7 +7,7 @@ class House(models.Model):
     url = models.URLField(max_length=200, default="https://raw.githubusercontent.com/aframevr/aframe/master/examples/boilerplate/panorama/puydesancy.jpg")
     description = models.CharField(max_length=200, default="Good Room")
 
-class Rooms(models.Model):
+class Room(models.Model):
     description = models.CharField(max_length=200)
     url = models.URLField(max_length=200, default="https://raw.githubusercontent.com/aframevr/aframe/master/examples/boilerplate/panorama/puydesancy.jpg")
     house_id = models.CharField(max_length=200)
