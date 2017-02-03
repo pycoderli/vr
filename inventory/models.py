@@ -11,6 +11,9 @@ class Rooms(models.Model):
     description = models.CharField(max_length=200)
     url = models.URLField(max_length=200, default="https://raw.githubusercontent.com/aframevr/aframe/master/examples/boilerplate/panorama/puydesancy.jpg")
     item_id = models.CharField(max_length=200)
+    def allarr(self):
+        arrow = ConnectedArrow.objects.filter(room_id=self.id)
+        return arrow
 
 class ConnectedArrow(models.Model):
     room_id = models.CharField(max_length=200)
