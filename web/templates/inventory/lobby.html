@@ -22,8 +22,6 @@
       navVR3.onclick = navigate3;
       var navVR4 = document.getElementById("navigate4");
       navVR4.onclick = navigate4;
-      var exitVR = document.getElementById("exit");
-      exitVR.onclick = exit;
     };
 
     function navigate1() {
@@ -41,10 +39,6 @@
     function navigate4() {
       window.location.href = "{% url 'hallway' %}";
     }
-
-    function exit() {
-        window.location.href = "{% url 'house' %}";
-      }
   </script>
 </head>
 
@@ -87,13 +81,13 @@
         </a-sphere>
 
         <a-sky src="#skyTexture"></a-sky>
-        <div class="a-exit-vr" aframe-injected="" style="display: block;">
-          <button class="a-enter-vr-button" aframe-injected=""></button>
-        </div>
         <a-camera>
           <a-cursor></a-cursor>
         </a-camera>
   </a-scene>
+  <div class="a-exit-vr" aframe-injected="" style="display: block;">
+    <a href="{% url 'house' %}" class="a-exit-vr-button"><img src="https://raw.githubusercontent.com/hskang9/WebVR/4cd6fbcbf179e35e37f6557b097707175a3fbed0/web/static/assets/icons/exit.png"></a>
+  </div>
 
 </body>
 

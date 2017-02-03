@@ -16,16 +16,9 @@
     function initElement() {
       var navVR = document.getElementById("navigate");
       navVR.onclick = navigate;
-      var exitVR = document.getElementById("exit");
-      exitVR.onclick = exit;
     };
     function navigate() {
       window.location.href = "{% url 'lobby' %}";
-    }
-
-
-    function exit() {
-      window.location.href = "{% url 'house' %}";
     }
   </script>
 </head>
@@ -43,13 +36,13 @@
       <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
     </a-sphere>
     <a-sky src="#skyTexture"></a-sky>
-    <div class="a-exit-vr" aframe-injected="" style="display: block;">
-      <button class="a-enter-vr-button" aframe-injected=""></button>
-    </div>
     <a-camera>
       <a-cursor></a-cursor>
     </a-camera>
   </a-scene>
+  <div class="a-exit-vr" aframe-injected="" style="display: block;">
+    <a href="{% url 'house' %}" class="a-exit-vr-button"><img src="https://raw.githubusercontent.com/hskang9/WebVR/4cd6fbcbf179e35e37f6557b097707175a3fbed0/web/static/assets/icons/exit.png"></a>
+  </div>
 
 </body>
 
