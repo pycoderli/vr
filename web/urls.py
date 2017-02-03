@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^house_detail/(?P<id>\d+)/', views.house_detail, name='house_detail'),
     url(r'^admin/', admin.site.urls),
     url(r'^panorama/', views.panorama, name='panorama'),
-    url(r'^room_pic/(?P<id>\d+)/', views.room_pic, name='room_pic')
+    url(r'^room_pic/(?P<id>\d+)/', views.room_pic, name='room_pic'),
+    url(r'^arrow_pic/(?P<id>\d+)/', views.arrow_pic, name='arrow_pic')
 ]
