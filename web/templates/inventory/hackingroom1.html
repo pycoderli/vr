@@ -10,10 +10,9 @@
     }
     
     .a-exit-vr-button {
-      width: 50px;
-      height: 50px;
+      width: 1px;
+      height: 1px;
       border: 0;
-      cursor: pointer;
     }
   </style>
   <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
@@ -47,8 +46,10 @@
       <a-cursor></a-cursor>
     </a-camera>
   </a-scene>
-  <div class="a-exit-vr" aframe-injected="" style="display: block;">
-    <a href="{% url 'house' %}" class="a-exit-vr-button"><img src="https://raw.githubusercontent.com/hskang9/WebVR/4cd6fbcbf179e35e37f6557b097707175a3fbed0/web/static/assets/icons/exit.png"></a>
+  <div class="a-exit-vr">
+    <a href="{% url 'house' %}" class="a-exit-vr-button">
+      <img src="https://raw.githubusercontent.com/hskang9/WebVR/f2265e5cec0c754cf37f6eac44c3e9690336ff9a/web/static/assets/icons/exit.png">
+    </a>
   </div>
 
   <body>
