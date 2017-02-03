@@ -10,7 +10,6 @@ def index(request):
         'houses': houses,
     })
 
-<<<<<<< HEAD
 def panorama(request):
     return render(request, 'inventory/panorama.html')
 
@@ -34,7 +33,7 @@ def toilet4man(request):
 
 def customer_center(request):
     return render(request, 'inventory/customer_center.html')
-=======
+
 def house_detail(request, id):
     try:
         house = House.objects.get(id=id)
@@ -72,10 +71,3 @@ def arrow_pic(request, id):
     })
 
     return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
-
-
-# todo delete
-def panorama(request):
-    return render(request, 'inventory/panorama.html')
-    return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
->>>>>>> 340cf2dd568ee1a707bb420a3e552d3ee389c338

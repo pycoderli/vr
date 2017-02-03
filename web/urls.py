@@ -20,7 +20,6 @@ from inventory import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-<<<<<<< HEAD
     url(r'^admin/', admin.site.urls),
     url(r'^panorama/', views.panorama, name='panorama'),
     url(r'^hackingroom1/',views.hackingroom1, name='hackingroom1'),
@@ -30,11 +29,4 @@ urlpatterns = [
     url(r'^toilet4man/', views.toilet4man, name='toilet4man'),
     url(r'^office/', views.office, name='office'),
     url(r'^customer_center/', views.customer_center, name='customer_center'),
-=======
-    url(r'^house_detail/(?P<id>\d+)/', views.house_detail, name='house_detail'),
-    url(r'^admin/', admin.site.urls),
-    url(r'^panorama/', views.panorama, name='panorama'),
-    url(r'^room_pic/(?P<id>\d+)/', views.room_pic, name='room_pic'),
-    url(r'^arrow_pic/(?P<id>\d+)/', views.arrow_pic, name='arrow_pic')
->>>>>>> 340cf2dd568ee1a707bb420a3e552d3ee389c338
 ]
