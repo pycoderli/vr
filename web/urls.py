@@ -20,8 +20,13 @@ from inventory import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^item/(?P<id>\d+)/', views.item_detail, name='item_detail'),
     url(r'^admin/', admin.site.urls),
     url(r'^panorama/', views.panorama, name='panorama'),
-    url(r'^image_link/(?P<id>\d+)/', views.image_link, name='room_pic')
+    url(r'^hackingroom1/',views.hackingroom1, name='hackingroom1'),
+    url(r'^hackingroom2/',views.hackingroom2, name='hackingroom2'),
+    url(r'^hallway/', views.hallway, name='hallway'),
+    url(r'^lobby/', views.lobby, name='lobby'),
+    url(r'^toilet4man/', views.toilet4man, name='toilet4man'),
+    url(r'^office/', views.office, name='office'),
+    url(r'^customer_center/', views.customer_center, name='customer_center'),
 ]

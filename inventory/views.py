@@ -11,28 +11,26 @@ def index(request):
         'items': items,
     })
 
-def item_detail(request, id):
-    try:
-        item = Item.objects.get(id=id)
-    except Item.DoesNotExist:
-        raise Http404('This item does not exist')
-    return render(request, 'inventory/item_detail.html', {
-        'item': item,
-    })
-    return HttpResponse('<p> In item_detail view with id {0}</p>'.format(id))
-
-def image_link(request, id):
-    try:
-        roomss = Rooms.objects.filter(item_id=id)
-    except Rooms.DoesNotExist:
-        raise Http404('This item does not exist')
-    return render(request, 'inventory/room_panorama.html', {
-        'room': roomss[0]
-    })
-    return HttpResponse('<p> In item_detail view with id {0}</p>'.format(id))
-
-
-# todo delete
 def panorama(request):
     return render(request, 'inventory/panorama.html')
-    return HttpResponse('<p> In item_detail view with id {0}</p>'.format(id))
+
+def hackingroom1(request):
+    return render(request, 'inventory/hackingroom1.html')
+
+def hackingroom2(request):
+    return render(request, 'inventory/hackingroom2.html')
+
+def hallway(request):
+    return render(request, 'inventory/hallway.html')
+
+def lobby(request):
+    return render(request, 'inventory/lobby.html')
+
+def office(request):
+    return render(request, 'inventory/office.html')
+
+def toilet4man(request):
+    return render(request, 'inventory/toilet4man.html')
+
+def customer_center(request):
+    return render(request, 'inventory/customer_center.html')
