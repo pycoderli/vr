@@ -7,11 +7,46 @@
     <title>Map</title>
 </head>
 
+<style media="screen">
+.bg-map {
+    background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/map-img/bg-map.png") no-repeat;
+    background-size: cover;
+    width: 468px;
+    height:717px;
+    margin-top: -10px;
+}
+.back {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    margin-left:20px;
+    margin-top: 18px;
+}
+.bar {
+    background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/map-img/map-bar.png") no-repeat;
+    background-size: cover;
+    width: 468px;
+    height: 83px;
+}
+.gotolist {
+    margin-top: 658px;
+    margin-left: 351px;
+    width: 20%;
+    height: 20%;
+}
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+</style>
+
 <body>
     <div class='bar'>
         <div>
-            <a href="{% url link/to/list %}">
-                <img class="back" src="img/back.png">
+            <a href="{% url 'index' %}">
+                <img class="back" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/map-img/back.png">
             </a>
             </img>
         </div>
@@ -19,8 +54,8 @@
 
     <div class='bg-map'>
         <div>
-            <a href="{% url link/to/list %}">
-                <img class="gotolist" src="img/look-list.png">
+            <a href="{% url 'list' %}">
+                <img class="gotolist" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/map-img/look-list.png">
             </a>
             </img>
         </div>

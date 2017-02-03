@@ -4,16 +4,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <LINK REL=StyleSheet HREF="login.css" TYPE="text/css" MEDIA=screen>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login</title>
 </head>
+<style media="screen">
+.bg-login {
+    background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/login-img/bg-login.png") no-repeat;
+    background-size: cover;
+    width: 468px;
+    height:822px;
+}
 
+.gotomap {
+    margin-top: 400px;
+    margin-left: 118px;
+}
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+</style>
 <body>
 <div class='bg-login'>
     <div>
             <a href="{% url 'map' %}">
-            <img class="gotomap" src="img/look-around.png">
+            <img class="gotomap" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/login-img/look-around.png">
             </a>
         </img>
     </div>
