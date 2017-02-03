@@ -2,27 +2,35 @@
 
 <head>
   <style>
-  .a-exit-vr {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  .a-exit-vr-button {
-  }
+    .a-exit-vr {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    
+    .a-exit-vr-button {}
   </style>
   <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
   <script>
     function initElement() {
       var navVR1 = document.getElementById("navigate1");
-        navVR1.onclick = navigate1;
+      navVR1.onclick = navigate1;
       var navVR2 = document.getElementById("navigate2");
-        navVR2.onclick = navigate2;
+      navVR2.onclick = navigate2;
+      var exitVR = document.getElementById("exit");
+      exitVR.onclick = exit;
     };
+
     function navigate1() {
       window.location.href = "{% url 'hackingroom2' %}";
     }
+
     function navigate2() {
       window.location.href = "{% url 'lobby' %}";
+    }
+
+    function exit() {
+      window.location.href = "{% url 'house' %}";
     }
   </script>
 </head>
@@ -31,7 +39,7 @@
   <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
     <a-assets>
       <img id="sphereTexture" color="#fff">
-       <img id="skyTexture" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/photos/hallway.jpg" rotation= "0 -130 0">
+      <img id="skyTexture" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/photos/hallway.jpg" rotation="0 -130 0">
     </a-assets>
 
     <a-sphere id="navigate1" color="#FFF" width="2" height="2" depth="2" position="20 0 0" rotation="0 0 45" scale="2 2 2" src="#sphereTexture">
@@ -59,7 +67,7 @@
   </a-scene>
 
 
-  </body>
+</body>
 
 
 </html>
