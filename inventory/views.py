@@ -71,4 +71,3 @@ def arrow_pic(request, id):
     })
 
     return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
-
