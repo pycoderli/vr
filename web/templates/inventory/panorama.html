@@ -2,6 +2,17 @@
 <html>
 
 <head>
+  <style>
+  .a-exit-vr {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .a-exit-vr-button {
+
+  }
+  </style>
   <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
   <script>
     function initElement() {
@@ -27,7 +38,9 @@
       <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
     </a-sphere>
     <a-sky src="#skyTexture"></a-sky>
-
+    <div class="a-exit-vr" aframe-injected="" style="display: block;">
+      <button class="a-enter-vr-button" aframe-injected=""></button>
+    </div>
     <a-camera>
       <a-cursor></a-cursor>
     </a-camera>
