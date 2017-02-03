@@ -21,6 +21,10 @@ from inventory import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
+    url(r'^map/', views.map, name='map'),
+    url(r'^list/', views.list, name='list'),
+    url(r'^house/', views.house, name='house'),
+    # VR
     url(r'^panorama/', views.panorama, name='panorama'),
     url(r'^hackingroom1/',views.hackingroom1, name='hackingroom1'),
     url(r'^hackingroom2/',views.hackingroom2, name='hackingroom2'),
