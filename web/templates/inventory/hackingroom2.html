@@ -22,13 +22,10 @@
         navVR3.onclick = navigate3;
     };
     function navigate1() {
-      window.location.href = "{% url 'index' %}";
+      window.location.href = "{% url 'hackingroom1' %}";
     }
     function navigate2() {
-      window.location.href = "{% url 'index' %}";
-    }
-    function navigate3() {
-      window.location.href = "{% url 'index' %}";
+      window.location.href = "{% url 'hallway' %}";
     }
   </script>
 </head>
@@ -49,13 +46,6 @@
 
     <a-sphere id="navigate2" color="#FFF" width="2" height="2" depth="2" position="0 -10 -10" rotation="0 0 45" scale="2 2 2" src="#sphereTexture">
       <a-animation attribute="position" to="0 -10 -10" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
-      <!-- 커서가 오브젝트를 가리킬 때 애니메이션-->
-      <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
-      <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
-    </a-sphere>
-
-    <a-sphere id="navigate3" color="#FFF" width="2" height="2" depth="2" position="-10 10 -10" rotation="0 0 45" scale="2 2 2" src="#sphereTexture">
-      <a-animation attribute="position" to="-10 10 -10" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
       <!-- 커서가 오브젝트를 가리킬 때 애니메이션-->
       <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
       <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
