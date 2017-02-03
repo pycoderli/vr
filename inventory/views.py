@@ -10,6 +10,31 @@ def index(request):
         'houses': houses,
     })
 
+<<<<<<< HEAD
+def panorama(request):
+    return render(request, 'inventory/panorama.html')
+
+def hackingroom1(request):
+    return render(request, 'inventory/hackingroom1.html')
+
+def hackingroom2(request):
+    return render(request, 'inventory/hackingroom2.html')
+
+def hallway(request):
+    return render(request, 'inventory/hallway.html')
+
+def lobby(request):
+    return render(request, 'inventory/lobby.html')
+
+def office(request):
+    return render(request, 'inventory/office.html')
+
+def toilet4man(request):
+    return render(request, 'inventory/toilet4man.html')
+
+def customer_center(request):
+    return render(request, 'inventory/customer_center.html')
+=======
 def house_detail(request, id):
     try:
         house = House.objects.get(id=id)
@@ -53,3 +78,4 @@ def arrow_pic(request, id):
 def panorama(request):
     return render(request, 'inventory/panorama.html')
     return HttpResponse('<p> In house_detail view with id {0}</p>'.format(id))
+>>>>>>> 340cf2dd568ee1a707bb420a3e552d3ee389c338
