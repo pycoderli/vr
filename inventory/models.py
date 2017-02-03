@@ -14,4 +14,7 @@ class Rooms(models.Model):
 
 class ConnectedArrow(models.Model):
     room_id = models.CharField(max_length=200)
+    room_destination_id = models.CharField(max_length=100, default=1)
     arrow_degree = models.CharField(max_length=200)
+    position = models.CharField(max_length=100, default='0 0 0')
+    rotation = models.CharField(max_length=100, default='0 0 0')

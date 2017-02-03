@@ -5,5 +5,6 @@
   <h3>{{item.title|capfirst}}</h3>
   <h4>Description:</h4>
   <p>{{item.description}}</p>
-  <a href="{% url 'panorama' %}">See the panorama</a>
+  <a href="{% url 'room_pic' item.id %}">See the panorama</a>
+
 {% endblock %}

@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^item/(?P<id>\d+)/', views.item_detail, name='item_detail'),
     url(r'^admin/', admin.site.urls),
-    url(r'^panorama/', views.panorama, name='panorama')
+    url(r'^panorama/', views.panorama, name='panorama'),
+    url(r'^image_link/(?P<id>\d+)/', views.image_link, name='room_pic')
 ]
