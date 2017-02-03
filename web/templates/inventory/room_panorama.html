@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Panorama</title>
+    <meta name="description" content="Panorama — A-Frame">
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script>
+      function initElement() {
+          var navVR = document.getElementById("navigate");
+          navVR.onclick = navigate;
+      }
+      function navigate() {
+        window.location.href = "{% url 'arrow_pic' next_destination_id %}";
+      }
+    </script>
+  </head>
+  <body onload="initElement();">
+    <a-scene>
+      <a-sky src= "{{ room.url }}" rotation="0 -130 0"></a-sky>
+      <a-sphere id="navigate" color="#FFF" width="2" height="2" depth="2" position="0 2 -10" rotation="0 0 45" scale="2 2 2" src="#sphereTexture">
+        <a-animation attribute="position" to="0 2.2 -10" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+        <!-- 커서가 오브젝트를 가리킬 때 애니메이션-->
+        <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
+        <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+      </a-sphere>
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
