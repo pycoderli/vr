@@ -1,28 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<<<<<<< HEAD
   <h3>Rooms</h3>
   <ul>
-=======
-  <h3>Houses in stock</h3>
-  <ul>
-    {% for house in houses %}
-      <li>
-          <a href="{% url 'house_detail' house.id %}">
-            {{house.title | capfirst}}
-          </a>
-      </li>
-    {% endfor %}
->>>>>>> 340cf2dd568ee1a707bb420a3e552d3ee389c338
-      <li><a href="{% url 'panorama' %}">panorama</li>
+
       <li><a href="{% url 'hackingroom1' %}">hackingroom1</li>
       <li><a href="{% url 'hackingroom2' %}">hackingroom2</li>
       <li><a href="{% url 'hallway' %}">hallway</li>
-      <li><a href="{% url 'lobby' %}">lobby</li>
-      <li><a href="{% url 'toilet4man' %}">toilet4man</li>
-      <li><a href="{% url 'office' %}">office</li>
-      <li><a href="{% url 'customer_center' %}">customer_center</li>
+
+      <!--<li><a href="{% url 'panorama' %}">panorama</li>-->
+      <!--<li><a href="{% url 'lobby' %}">lobby</li>-->
+      <!--<li><a href="{% url 'toilet4man' %}">toilet4man</li>-->
+      <!--<li><a href="{% url 'office' %}">office</li>-->
+      <!--<li><a href="{% url 'customer_center' %}">customer_center</li>-->
 
   </ul>
 {% endblock %}
