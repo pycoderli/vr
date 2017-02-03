@@ -4,7 +4,6 @@ from django.http import HttpResponse
 
 from inventory.models import Item
 
-
 def index(request):
     items = Item.objects.all()
     return render(request, 'inventory/index.html', {
@@ -16,7 +15,7 @@ def item_detail(request, id):
         item = Item.objects.get(id=id)
     except Item.DoesNotExist:
         raise Http404('This item does not exist')
-    return render(request, 'inventory/image_link.html', {
+    return render(request, 'inventory/item_detail.html', {
         'item': item,
     })
     return HttpResponse('<p> In item_detail view with id {0}</p>'.format(id))
