@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <link rel="icon" 
+      type="image/png" 
+      href="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/icon.png">
   <style>
     .a-exit-vr {
       position: absolute;
@@ -14,6 +17,11 @@
       height: 30px;
       border: 0;
     }
+    .a-enter-vr-button {
+      background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/vr-vr.png") 50% 50%/70% 70% no-repeat;
+      height: 50px;
+      width: 70px;
+    }
   </style>
   <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -21,7 +29,7 @@
     function initElement() {
       var navVR = document.getElementById("navigate");
       navVR.onclick = navigate;
-      $('.a-enter-vr-button').css("background","url(https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/vr-vr.png) 100% 100%/10% 10% no-repeat");
+      $('.a-enter-vr-button').css("background","url(https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/vr-vr.png) 50% 50%/70% 70% no-repeat");
     };
     function navigate() {
       window.location.href = "{% url 'hackingroom2' %}";
