@@ -25,7 +25,7 @@ SECRET_KEY = 'pe!#ivsk$of4%g$r7-ov)n64n*yeumw7b#=kbv9etz8+0idemy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','yangyinetwork.asuscomm.com']
+ALLOWED_HOSTS = ['localhost','yangyinetwork.asuscomm.com','127.0.0.1']
 
 
 # Application definition
