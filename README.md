@@ -71,7 +71,7 @@ git clone https://github.com/hskang9/WebVR.git  # Clone the repository.
 cd WebVR && python manage.py runserver  # Start the local development server.
 ```
 
-And open in your browser **[http://localhost:8000](http://localhost:8000)**.
+And open in your browser **[http://localhost:8000](http://localhost:8000)** or **[http://127.0.0.1:8000](http://127.0.0.1:8000)**.
 
 ### Generating Builds
 
