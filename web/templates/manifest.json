@@ -1,0 +1,22 @@
+{
+    "dir": "ltr",
+    "lang": "ko",
+    "name": "Login",
+    "scope": "/",
+    "display": "fullscreen",
+    "start_url": "https://hskang9.pythonanywhere.com/",
+    "short_name": "Login",
+    "theme_color": "transparent",
+    "description": "VR land capital pwa",
+    "orientation": "portrait",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/hskang9/WebVR/master/web/static/assets/icons/icon.png",
+            "type": "image/png",
+            "sizes": "8491x6627"
+        }
+    ]
+}

@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
+{% load static %}
 <head>
-    <link rel="icon" 
-      type="image/png" 
+    <link rel="icon"
+      type="image/png"
       href="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Map</title>
@@ -11,7 +11,7 @@
 
 <style media="screen">
 .bg-map {
-    background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/map-img/bg-map.png") no-repeat;
+    background: url("{% static "map-img/bg-map.png" %}") no-repeat;
     background-size: cover;
     width: 468px;
     height:717px;
@@ -25,7 +25,7 @@
     margin-top: 18px;
 }
 .bar {
-    background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/map-img/map-bar.png") no-repeat;
+    background: url("{% static "map-img/map-bar.png" %}") no-repeat;
     background-size: cover;
     width: 468px;
     height: 83px;
@@ -36,11 +36,7 @@
     width: 20%;
     height: 20%;
 }
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 400;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
+
 
 </style>
 
@@ -48,7 +44,7 @@
     <div class='bar'>
         <div>
             <a href="{% url 'index' %}">
-                <img class="back" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/map-img/back.png">
+                <img class="back" src="{% static "map-img/back.png" %}">
             </a>
             </img>
         </div>
@@ -57,7 +53,7 @@
     <div class='bg-map'>
         <div>
             <a href="{% url 'list' %}">
-                <img class="gotolist" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/map-img/look-list.png">
+                <img class="gotolist" src="{% static "map-img/look-list.png" %}">
             </a>
             </img>
         </div>

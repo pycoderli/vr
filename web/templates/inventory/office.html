@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
+{% load static %}
 <head>
-  <link rel="icon" 
-      type="image/png" 
-      href="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/icon.png">
+  <link rel="icon"
+      type="image/png"
+      href="{% static "assets/icons/icon.png"%}">
   <style>
     .a-exit-vr {
       position: absolute;
@@ -35,7 +35,7 @@
   <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
     <a-assets>
       <img id="sphereTexture" color="#fff">
-      <img id="skyTexture" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/photos/office.jpg" rotation="0 -130 0">
+      <img id="skyTexture" src="{% static "photos/office.jpg"%}" rotation="0 -130 0">
     </a-assets>
     <a-sphere id="navigate" color="#FFF" width="2" height="2" depth="2" position="14 2 -10" rotation="0 0 45" scale="2 2 2" src="#sphereTexture">
       <a-animation attribute="position" to="14 2.2 -10" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
@@ -50,7 +50,7 @@
   </a-scene>
   <div class="a-exit-vr" aframe-injected="" style="display: block;">
     <a href="{% url 'house' %}">
-      <img src="https://raw.githubusercontent.com/hskang9/WebVR/66d801eba42942ca99d548ffaf4b83650a0575d0/web/static/assets/icons/exit.png" class="a-exit-vr-button">
+      <img src="{% static "assets/icons/exit.png"%}" class="a-exit-vr-button">
     </a>
   </div>
 

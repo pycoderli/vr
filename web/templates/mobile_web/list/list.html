@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
+{% load static %}
 <head>
-    <link rel="icon" 
-      type="image/png" 
+    <link rel="icon"
+      type="image/png"
       href="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>List</title>
@@ -11,13 +11,13 @@
 
 <style media="screen">
     .bg-list {
-        background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/list-img/bg-list.png") no-repeat;
+        background: url("{% static "list-img/bg-list.png" %}") no-repeat;
         background-size: cover;
         width: 468px;
         height: 828px;
         margin-top: -10px;
     }
-    
+
     .back {
         width: 34px;
         height: 34px;
@@ -25,14 +25,14 @@
         margin-left: 20px;
         margin-top: 18px;
     }
-    
+
     .bar {
-        background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/list-img/list-bar.png") no-repeat;
+        background: url("{% static "list-img/list-bar.png" %}") no-repeat;
         background-size: cover;
         width: 468px;
         height: 83px;
     }
-    
+
     .gotohouse {
         background-color: transparent;
         background-repeat: no-repeat;
@@ -45,19 +45,15 @@
         width: 420px;
         height: 168px;
     }
-    
-    @font-face {
-        font-family: "San Francisco";
-        font-weight: 400;
-        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-    }
+
+
 </style>
 
 <body>
     <div class='bar'>
         <div>
             <a href="{% url 'map' %}">
-                <img class="back" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/list-img/back.png">
+                <img class="back" src="{% static "list-img/back.png"%}">
             </a>
             </img>
         </div>

@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pe!#ivsk$of4%g$r7-ov)n64n*yeumw7b#=kbv9etz8+0idemy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','yangyinetwork.asuscomm.com','127.0.0.1']
+ALLOWED_HOSTS = ['localhost','hskang9.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
+{% load static %}
 <head>
-  <link rel="icon" 
-      type="image/png" 
-      href="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/icon.png">
+  <link rel="icon"
+      type="image/png"
+      href="{% static "assets/icons/icon.png"%}">
   <style>
     .a-exit-vr {
       position: absolute;
@@ -41,11 +41,11 @@
   <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
     <a-assets>
       <img id="sphereTexture" color="#fff">
-      <img id="skyTexture" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/photos/hacking-room2.jpg" rotation="0 -130 0">
+      <img id="skyTexture" src="{% static "photos/hacking-room2.jpg"%}" rotation="0 -130 0">
     </a-assets>
 
-    <a-sphere id="navigate1" color="#FFF" width="2" height="2" depth="2" position="-20 0 0" rotation="0 0 45" scale="2 2 2" src="#sphereTexture">
-      <a-animation attribute="position" to="-20 2.2 0" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+    <a-sphere id="navigate1" color="#FFF" width="2" height="2" depth="2" position="-66.03 1.82 -69.20" rotation="0 0 45" scale="2 2 2" src="#sphereTexture">
+      <a-animation attribute="position" to="-66.03 2.2 -69.20" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
       <!-- 커서가 오브젝트를 가리킬 때 애니메이션-->
       <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
       <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
@@ -66,7 +66,7 @@
   </a-scene>
   <div class="a-exit-vr" aframe-injected="" style="display: block;">
     <a href="{% url 'house' %}">
-      <img src="https://raw.githubusercontent.com/hskang9/WebVR/66d801eba42942ca99d548ffaf4b83650a0575d0/web/static/assets/icons/exit.png" class="a-exit-vr-button">
+      <img src="{% static "assets/icons/exit.png"%}" class="a-exit-vr-button">
     </a>
   </div>
 </body>

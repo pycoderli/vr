@@ -1,22 +1,22 @@
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
+{% load static %}
 <head>
-    <link rel="icon" 
-      type="image/png" 
+    <link rel="icon"
+      type="image/png"
       href="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/assets/icons/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>House</title>
 </head>
 <style>
     .bg-house {
-        background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/house-img/bg-house.png") no-repeat;
+        background: url("{% static "house-img/bg-house.png" %}") no-repeat;
         background-size: cover;
         width: 468px;
         height: 1652px;
         margin-top: -10px;
     }
-    
+
     .back {
         width: 34px;
         height: 34px;
@@ -24,33 +24,29 @@
         margin-left: 20px;
         margin-top: 18px;
     }
-    
+
     .bar {
-        background: url("https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/house-img/house-bar.png") no-repeat;
+        background: url("{% static "house-img/house-bar.png" %}") no-repeat;
         background-size: cover;
         width: 468px;
         height: 83px;
     }
-    
+
     .gotoVR {
         margin-top: 319px;
         margin-left: 191px;
         width: 20%;
         height: 20%;
     }
-    
-    @font-face {
-        font-family: "San Francisco";
-        font-weight: 400;
-        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-    }
+
+
 </style>
 
 <body>
     <div class='bar'>
         <div>
             <a href="{% url 'list' %}">
-                <img class="back" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/house-img/back.png">
+                <img class="back" src="{% static "house-img/back.png" %}">
             </a>
             </img>
         </div>
@@ -59,7 +55,7 @@
     <div class='bg-house'>
         <div>
             <a href="{% url 'hackingroom1' %}">
-                <img class="gotoVR" src="https://raw.githubusercontent.com/hskang9/WebVR/master/web/static/house-img/look-vr.png">
+                <img class="gotoVR" src="{% static "house-img/look-vr.png" %}">
             </a>
             </img>
         </div>
