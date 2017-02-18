@@ -28,11 +28,11 @@ scene**](http://codepen.io/sudosudoohio/pen/GrxOzY).
   <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
   <script>
                unction initElement() {
-                 ar navVR = document.getElementById("navigate");
-                 avVR.onclick = navigate;
+                 var navVR = document.getElementById("navigate");
+                 navVR.onclick = navigate;
                ;
-               unction navigate() {
-                 indow.location.href = "http://www.naver.com";
+               function navigate() {
+                 window.location.href = "http://www.naver.com";
                
   </script>
 </head>
