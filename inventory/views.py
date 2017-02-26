@@ -22,25 +22,25 @@ def house(request):
 
 # VR
 def panorama(request):
-    return render(request, 'inventory/panorama.html')
+    return render(request, 'VR/panorama.html')
 
 def hackingroom1(request):
-    return render(request, 'inventory/hackingroom1.html')
+    return render(request, 'VR/hackingroom1.html')
 
 def hackingroom2(request):
-    return render(request, 'inventory/hackingroom2.html')
+    return render(request, 'VR/hackingroom2.html')
 
 def hallway(request):
-    return render(request, 'inventory/hallway.html')
+    return render(request, 'VR/hallway.html')
 
 def lobby(request):
-    return render(request, 'inventory/lobby.html')
+    return render(request, 'VR/lobby.html')
 
 def office(request):
-    return render(request, 'inventory/office.html')
+    return render(request, 'VR/office.html')
 
 def toilet4man(request):
-    return render(request, 'inventory/toilet4man.html')
+    return render(request, 'VR/toilet4man.html')
 
 def customer_center(request):
-    return render(request, 'inventory/customer_center.html')
+    return render(request, 'VR/customer_center.html')

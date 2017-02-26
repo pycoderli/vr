@@ -1,43 +1,141 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <link rel="icon"
-      type="image/png"
-      href="{% static "assets/icons/icon.png"%}">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link rel="icon" type="image/png" href="{% static " assets/icons/icon.png "%}">
+    <link href="//cdn.muicss.com/mui-0.9.9/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.9/js/mui.min.js"></script>
+
     <title>Login</title>
 </head>
-<style media="screen">
-    .bg-login {
-        background: url("{% static "login-img/bg-login.png" %}") no-repeat;
-        background-size: cover;
-        width: 468px;
-        height: 822px;
-    }
 
-    .gotomap {
-        margin-top: 490px;
-        margin-left: 175px;
-    }
-
-
+<style>
+    // import MUI colors
+    @import "bower_components/mui/src/sass/mui/colors";
+    // customize MUI variables
+    $mui-primary-color: mui-color('purple', '500');
+    $mui-primary-color-dark: mui-color('purple', '700');
+    $mui-primary-color-light: mui-color('purple', '100');
+    $mui-accent-color: mui-color('green', 'A200');
+    $mui-accent-color-dark: mui-color('green', 'A100');
+    $mui-accent-color-light: mui-color('green', 'A400');
+    // import MUI SASS
+    @import "bower_components/mui/src/sass/mui";
 </style>
 
 <body>
     <div class='bg-login'>
-        <div>
-            <a href="{% url 'map' %}">
-                <img class="gotomap" src="{% static "login-img/look-around.png" %}">
-            </a>
-            </img>
+        <!-- example content -->
+        <div class="mui-appbar">
+            <table width="100%">
+                <tr style="vertical-align:middle;">
+                    <td class="mui--appbar-height">Left Side</td>
+                    <td class="mui--appbar-height" align="right">Right Side</td>
+                </tr>
+            </table>
         </div>
+
+        <fb:login-button style="display: invisible;" class="mui-btn mui-btn--primary mui-btn--raised" scope="public_profile,email"
+            onlogin="checkLoginState();">
+
+            </fb:login-button>
+    </div>
+    <!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
     </div>
 </body>
+
+<script>
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            testAPI();
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into this app.';
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into Facebook.';
+        }
+    }
+
+    // This function is called when someone finishes with the Login
+    // Button.  See the onlogin handler attached to it in the sample
+    // code below.
+    function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1260948073944183',
+            cookie: true,  // enable cookies to allow the server to access 
+            // the session
+            xfbml: true,  // parse social plugins on this page
+            version: 'v2.8' // use graph api version 2.8
+        });
+
+        // Now that we've initialized the JavaScript SDK, we call 
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+
+    };
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function (response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('status').innerHTML =
+                'Thanks for logging in, ' + response.name + '!';
+        });
+    }
+
+</script>
 
 
 </html>
