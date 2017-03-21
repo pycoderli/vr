@@ -29,7 +29,7 @@
     function initElement() {
       var navVR = document.getElementById("navigate");
       navVR.onclick = navigate;
-      $('.a-enter-vr-button').css("background","url({% static "assets/icons/vr-vr.png"%}") 50% 50%/70% 70% no-repeat");
+      $('.a-enter-vr-button').css("background","url({% static "assets/icons/vr-vr.png"%}") 50% 50%/70% 70% no-repeat);
     };
     function navigate() {
       window.location.href = "{% url 'hackingroom2' %}";
